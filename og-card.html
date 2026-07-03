@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{
+  background:#F6F5F3;
+  font-family:'Instrument Sans',-apple-system,sans-serif;
+  color:#161513;
+  position:relative;
+}
+.rose{position:absolute;right:-160px;top:50%;transform:translateY(-50%);width:640px;height:640px;opacity:.9}
+.content{position:absolute;left:84px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:720px;z-index:2}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.22em;color:#B08C4A;text-transform:uppercase;margin-bottom:28px}
+h1{font-size:64px;line-height:1.08;letter-spacing:-.02em;font-weight:600}
+h1 em{font-style:normal;color:#B08C4A}
+.name{margin-top:44px;display:flex;align-items:center;gap:16px}
+.name b{font-size:26px;font-weight:600;letter-spacing:-.01em}
+.name span{font-family:'IBM Plex Mono',monospace;font-size:15px;color:#6E6B66;letter-spacing:.06em}
+.rule{position:absolute;left:84px;right:84px;bottom:56px;border-top:1px solid #E8E6E2;padding-top:18px;
+  display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.08em;color:#6E6B66;z-index:2}
+.rule b{color:#161513;font-weight:500}
+</style>
+</head>
+<body>
+  <svg class="rose" viewBox="0 0 600 600" fill="none">
+    <circle cx="300" cy="300" r="292" stroke="#E8E6E2" stroke-width="1.4"/>
+    <circle cx="300" cy="300" r="236" stroke="#E8E6E2" stroke-width="1.4"/>
+    <circle cx="300" cy="300" r="150" stroke="#EFEDE9" stroke-width="1.4"/>
+    <g id="ticks" stroke="#D8D5CF" stroke-width="1.2"></g>
+    <path d="M300 40 L312 300 L300 560 L288 300 Z" fill="#B08C4A" fill-opacity=".18"/>
+    <path d="M40 300 L300 288 L560 300 L300 312 Z" fill="#161513" fill-opacity=".06"/>
+    <path d="M300 40 L306 300 L300 560 L294 300 Z" stroke="#B08C4A" stroke-width="1.2" stroke-opacity=".5"/>
+    <circle cx="300" cy="300" r="5" fill="#B08C4A"/>
+    <text x="300" y="24" text-anchor="middle" font-family="IBM Plex Mono" font-size="15" letter-spacing="3" fill="#A3A099">N</text>
+  </svg>
+  <div class="content">
+    <div class="eyebrow">Android · Mentoring · Reference</div>
+    <h1>Android systems that secure <em>1M+ corporate devices.</em></h1>
+    <div class="name">
+      <b>Gustavo Levandowski</b>
+      <span>Android Enterprise Expert · Google</span>
+    </div>
+  </div>
+  <div class="rule">
+    <span><b>gustavolevandowski.com</b></span>
+    <span>EST 2013 · ANDROID 2017 · SC / BR</span>
+  </div>
+  <script>
+    const g = document.getElementById('ticks');
+    for (let i = 0; i < 72; i++) {
+      const a = i * 5 * Math.PI / 180, long = i % 9 === 0;
+      const r1 = long ? 274 : 282, r2 = 292;
+      const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      l.setAttribute('x1', 300 + r1 * Math.sin(a)); l.setAttribute('y1', 300 - r1 * Math.cos(a));
+      l.setAttribute('x2', 300 + r2 * Math.sin(a)); l.setAttribute('y2', 300 - r2 * Math.cos(a));
+      g.appendChild(l);
+    }
+  </script>
+</body>
+</html>
