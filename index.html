@@ -268,7 +268,11 @@
   --ease-out:cubic-bezier(.16,1,.3,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  scrollbar-width:thin;
+  scrollbar-color:var(--gold) var(--surface);
+}
 /* âncoras do menu não podem esconder o título sob a nav fixa */
 #work,#about,#contact,#faq{scroll-margin-top:84px}
 /* decorativos (hero-rose) se estendem além da viewport; clip evita scroll lateral no mobile */
@@ -284,6 +288,18 @@ body{
 ::selection{background:var(--gold-faint);color:var(--ink)}
 figure img{max-width:100%;height:auto;display:block}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ================= SCROLLBAR ================= */
+html::-webkit-scrollbar{width:10px;height:10px}
+html::-webkit-scrollbar-track{background:var(--surface);border-left:1px solid var(--hairline)}
+html::-webkit-scrollbar-thumb{
+  background:var(--gold);
+  border:2px solid var(--surface);
+  border-radius:100px;
+}
+html::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:active{background:var(--ink)}
+html::-webkit-scrollbar-corner{background:var(--surface)}
 
 /* ============ LANGUAGE SWITCHING ============ */
 .lang-pt-el{display:none}
