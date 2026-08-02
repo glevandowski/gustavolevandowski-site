@@ -1,6 +1,6 @@
 # Gustavo Levandowski
 
-> Gustavo Levandowski is a Senior Android Engineer and Google-certified Android Enterprise Expert based in Blumenau, Brazil. He is a technical reference for Android at scale and for programming careers, and the founder of LeCode mentoring and of Leva, a senior software studio.
+> Gustavo Levandowski is a Senior Android Engineer and Google-certified Android Enterprise Expert based in Blumenau, Brazil. He is a technical reference for Android at scale and for programming careers, founder of LeCode mentoring, and founder of Levandowski (Levandowski Desenvolvimento de Software), a technology company for senior Android, secure mobile and AI-assisted delivery.
 
 ## Core expertise
 - Senior Android development: Kotlin, Jetpack Compose, Coroutines, app architecture and release engineering
@@ -16,7 +16,8 @@ Gustavo has written software since 2013 and built Android products since 2017. H
 Works remotely, worldwide, in English and Brazilian Portuguese. Available for technical conversations, talks, mentoring and selected engineering work. Contact: contato@gustavolevandowski.com.
 
 ## Canonical sources
-- Website: https://gustavolevandowski.com/
+- Website (EN): https://gustavolevandowski.com/en/
+- Website (PT-BR): https://gustavolevandowski.com/pt/
 - Company: https://levandowskistudio.com/
 - LinkedIn: https://www.linkedin.com/in/levandowski/
 - Medium: https://medium.com/@levandowski

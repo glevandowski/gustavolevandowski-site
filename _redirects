@@ -1,0 +1,9 @@
+##
+# Netlify routing — language URLs are the canonical indexed pages.
+##
+
+# Force root to English; users switch to /pt/ via the language toggle.
+/   /en/  302!
+
+# Help LLM crawlers find the factual brief.
+/.well-known/llms.txt  /llms.txt  200

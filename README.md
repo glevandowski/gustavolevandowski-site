@@ -73,8 +73,9 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 
 - Meta tags Open Graph e Twitter Card (`og.jpg` 1200×630)
 - JSON-LD: `WebSite`, `ProfilePage`, `Person` e `FAQPage`
-- Canonical, `hreflang`, robots enriquecido e descrição orientada a busca e answer engines
-- `robots.txt`, `sitemap.xml` e `llms.txt` para crawlers e mecanismos generativos
+- Rotas canônicas `/en/` e `/pt/` com `hreflang` (root redireciona para `/en/`)
+- `robots.txt` com Allow explícito para bots de IA (GPTBot, ChatGPT-User, ClaudeBot, …)
+- `sitemap.xml`, `llms.txt`, IndexNow e checklist em `DISCOVERY.md`
 - Web app manifest e favicon SVG + PNG
 - Locales `en_US` e `pt_BR`
 
@@ -84,19 +85,24 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 
 ```text
 gustavolevandowski-site/
-├── index.html       # Página completa (markup, CSS, JS, schemas)
+├── index.html       # Fonte bilíngue (editar aqui)
+├── en/index.html    # Build EN (scripts/build_i18n.py)
+├── pt/index.html    # Build PT-BR
+├── _redirects       # / → /en/ e /.well-known/llms.txt
 ├── og-card.html     # Fonte visual do card de compartilhamento
 ├── og.jpg           # Imagem Open Graph / Twitter (1200×630)
 ├── favicon.svg      # Ícone vetorial da marca
 ├── favicon.png      # Fallback PNG 32×32
 ├── site.webmanifest # Metadados de instalação e identidade do site
-├── robots.txt       # Política de rastreamento e descoberta do sitemap
-├── sitemap.xml      # Índice canônico para buscadores
-├── llms.txt         # Contexto factual para LLMs e mecanismos generativos
+├── robots.txt       # Crawlers + bots de IA
+├── sitemap.xml      # Índice EN/PT com hreflang
+├── llms.txt         # Contexto factual para LLMs
+├── DISCOVERY.md     # Bing/GSC/IndexNow/backlinks
+├── scripts/         # build_i18n.py, submit_indexnow.py
 └── README.md
 ```
 
-Tudo vive em um único `index.html` de propósito: deploy trivial, sem bundler, sem dependências de runtime.
+A experiência continua estática e sem dependências de runtime. Depois de editar `index.html`, rode `scripts/build_i18n.py` e faça commit de `en/`, `pt/` e `sitemap.xml`.
 
 ---
 

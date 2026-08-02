@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gustavolevandowski.com/</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://gustavolevandowski.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gustavolevandowski.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://gustavolevandowski.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gustavolevandowski.com/en/"/>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gustavolevandowski.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gustavolevandowski.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://gustavolevandowski.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gustavolevandowski.com/en/"/>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
