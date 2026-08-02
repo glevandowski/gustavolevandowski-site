@@ -503,7 +503,8 @@ footer{
   .about-grid{grid-template-columns:1fr;gap:44px}
   .about-side{position:static}
   .quotes-grid{grid-template-columns:1fr}
-  .nav-links a:not(:last-child){display:none}
+  /* Hide section links only — keep both EN/PT inside .lang-toggle */
+  .nav-links > a{display:none}
   /* HUD compacto no touch: só o mostrador, canto inferior direito, tocável */
   .compass-hud{left:auto;right:16px;bottom:16px;gap:0}
   .compass-hud .dial{
