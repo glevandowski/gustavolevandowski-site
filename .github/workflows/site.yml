@@ -1,0 +1,80 @@
+name: Site build & IndexNow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Build EN/PT pages
+        run: python scripts/build_i18n.py
+
+      - name: Check generated pages
+        run: |
+          test -f en/index.html
+          test -f pt/index.html
+          test -f sitemap.xml
+          test -s en/index.html
+          test -s pt/index.html
+
+  indexnow:
+    needs: build
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Wait for Netlify production
+        run: |
+          set -e
+          echo "Waiting for https://gustavolevandowski.com/en/ …"
+          for i in $(seq 1 36); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' https://gustavolevandowski.com/en/ || true)
+            echo "attempt $i → HTTP $code"
+            if [ "$code" = "200" ]; then
+              # Ensure IndexNow key is also live
+              key=$(basename "$(ls [0-9a-f]*.txt | head -1)" .txt)
+              kcode=$(curl -s -o /dev/null -w '%{http_code}' "https://gustavolevandowski.com/${key}.txt" || true)
+              echo "IndexNow key → HTTP $kcode"
+              if [ "$kcode" = "200" ]; then
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo "Timed out waiting for production deploy"
+          exit 1
+
+      - name: Submit IndexNow
+        run: python scripts/submit_indexnow.py

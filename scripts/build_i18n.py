@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build language-specific /en and /pt pages from the bilingual index.html source."""
+"""Build language-specific /en and /pt pages from the bilingual src/index.html source."""
 
 from __future__ import annotations
 
@@ -12,11 +12,11 @@ from pathlib import Path
 try:
     from bs4 import BeautifulSoup, Comment
 except ImportError:
-    sys.stderr.write("Install BeautifulSoup: python3 -m venv .venv && .venv/bin/pip install beautifulsoup4\n")
+    sys.stderr.write("Install deps: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt\n")
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "index.html"
+SOURCE = ROOT / "src" / "index.html"
 DOMAIN = "https://gustavolevandowski.com"
 
 PT_META = {
@@ -163,8 +163,7 @@ def patch_head(soup: BeautifulSoup, lang: str) -> None:
 
 def strip_source_comments(soup: BeautifulSoup) -> None:
     for c in soup.find_all(string=lambda t: isinstance(t, Comment)):
-        if "Language URLs" in c or "PRODUCTION NOTE" in c:
-            c.extract()
+        c.extract()
 
 
 def build_variant(lang: str) -> Path:
@@ -172,7 +171,6 @@ def build_variant(lang: str) -> Path:
     keep = "lang-en-el" if lang == "en" else "lang-pt-el"
     drop = "lang-pt-el" if lang == "en" else "lang-en-el"
     unwrap_lang(soup, keep, drop)
-    # Remove now-unused bilingual CSS helpers? keep for safety.
     set_lang_toggle(soup, lang)
     patch_head(soup, lang)
     rebuild_faq_jsonld(soup)

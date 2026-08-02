@@ -86,7 +86,7 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 
 ```text
 gustavolevandowski-site/
-├── index.html              # Fonte bilíngue (editar aqui)
+├── src/index.html          # Fonte bilíngue (editar aqui)
 ├── en/index.html           # Build EN — página indexável
 ├── pt/index.html           # Build PT-BR — página indexável
 ├── assets/
@@ -97,37 +97,43 @@ gustavolevandowski-site/
 │   └── brand/              # favicon, og.jpg, og-card.html
 ├── _redirects              # / → /en/, legacy brand paths, llms
 ├── _headers                # Cache de HTML vs assets
+├── netlify.toml            # Build: i18n + IndexNow
+├── .github/workflows/      # CI: build + IndexNow pós-deploy
 ├── site.webmanifest
 ├── robots.txt
 ├── sitemap.xml
 ├── llms.txt
 ├── DISCOVERY.md
+├── requirements.txt
 ├── scripts/                # build_i18n.py, submit_indexnow.py
 └── README.md
 ```
 
-Depois de editar `index.html`, rode `scripts/build_i18n.py` e faça commit de `en/`, `pt/` e `sitemap.xml`. Assets em `/assets` são cacheados via `_headers`.
+Depois de editar `src/index.html`, a pipeline gera `/en` e `/pt` no Netlify (e no GitHub Actions). Localmente:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python scripts/build_i18n.py
+```
+
+Faça commit de `en/`, `pt/` e `sitemap.xml` se quiser pré-visualizar no Git sem build; o deploy sempre reconstrói. Assets em `/assets` são cacheados via `_headers`.
 
 ---
 
 ## Como rodar localmente
 
-Não há instalação. Qualquer servidor estático serve.
+Gere as páginas de idioma e sirva a pasta do projeto:
 
 ```bash
-# Python
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python scripts/build_i18n.py
 python3 -m http.server 8080
-
-# Node (se tiver npx)
-npx serve .
-
-# PHP
-php -S localhost:8080
 ```
 
-Abra [http://localhost:8080](http://localhost:8080).
+Abra [http://localhost:8080/en/](http://localhost:8080/en/) (a raiz redireciona para `/en/` no Netlify).
 
-> Abrir o `index.html` direto pelo `file://` funciona para a maior parte da página, mas um servidor local evita surpresas com fontes e caminhos.
+> Abrir `src/index.html` por `file://` não carrega `/assets` nem os diagramas; use um servidor local.
 
 ---
 
@@ -195,7 +201,7 @@ Qualquer host de arquivos estáticos serve o projeto:
 - [Vercel](https://vercel.com/)
 - Bucket S3 / qualquer CDN
 
-Publique a raiz do repositório. Em produção, o comentário no `index.html` recomenda servir **EN e PT em rotas separadas** (`/en`, `/pt`) com `hreflang`, em vez de depender só do toggle client-side — o arquivo único é o build de preview/conteúdo unificado.
+Publique a raiz do repositório. Em produção, `/` redireciona para `/en/`; as páginas indexáveis são `/en/` e `/pt/` com `hreflang`. A fonte bilíngue fica em `src/index.html` e é buildada na pipeline.
 
 ---
 

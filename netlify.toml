@@ -1,0 +1,13 @@
+# Netlify — build language pages then notify IndexNow.
+# Publish the repo root (en/, pt/, assets/, SEO files).
+
+[build]
+  command = "python3 -m pip install -r requirements.txt && python3 scripts/build_i18n.py && python3 scripts/submit_indexnow.py"
+  publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+# Ignore Python tooling in the publish scan (still available during build).
+[build.processing]
+  skip_processing = false

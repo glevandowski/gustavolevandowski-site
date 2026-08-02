@@ -1,4 +1,50 @@
-.venv/
-__pycache__/
-*.pyc
+# OS
 .DS_Store
+.DS_Store?
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+._*
+
+# Editors / IDE
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+.cursor/
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node (local static servers / tooling)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Local / secrets
+.env
+.env.*
+!.env.example
+*.log
+.cache/
+.temp/
+.tmp/
+
+# Netlify CLI local
+.netlify/

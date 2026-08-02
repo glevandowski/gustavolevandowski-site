@@ -48,11 +48,11 @@ Publique o site pessoal como link canônico nestes perfis:
 
 ## Regenerar páginas de idioma
 
-Após editar o `index.html` bilíngue na raiz:
+Após editar `src/index.html`:
 
 ```bash
-python3 -m venv .venv && .venv/bin/pip install beautifulsoup4
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/build_i18n.py
 ```
 
-Faça commit de `en/`, `pt/` e `sitemap.xml` junto com a fonte.
+No deploy, o Netlify e o GitHub Actions já rodam `build_i18n.py` e `submit_indexnow.py` automaticamente.
