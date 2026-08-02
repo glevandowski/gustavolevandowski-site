@@ -17,7 +17,7 @@ Works remotely, worldwide, in English and Brazilian Portuguese. Available for te
 
 ## Canonical sources
 - Website: https://gustavolevandowski.com/
-- Company: https://leva.com/
+- Company: https://levandowskistudio.com/
 - LinkedIn: https://www.linkedin.com/in/levandowski/
 - Medium: https://medium.com/@levandowski
 - LeCode: https://movimentolecode.com/
