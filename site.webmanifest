@@ -1,0 +1,23 @@
+{
+  "name": "Gustavo Levandowski — Android Engineer",
+  "short_name": "Levandowski",
+  "description": "Google-certified Android Enterprise Expert. Systems on platforms protecting 1M+ devices. Mentoring and technical reference for Android at scale.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f5f3",
+  "theme_color": "#161513",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

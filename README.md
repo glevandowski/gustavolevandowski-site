@@ -72,9 +72,11 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 ### SEO e descoberta
 
 - Meta tags Open Graph e Twitter Card (`og.jpg` 1200×630)
-- JSON-LD: `ProfilePage`, `Person` e `FAQPage`
-- Canonical, robots e descrição orientada a busca e answer engines
-- Favicon SVG + PNG
+- JSON-LD: `WebSite`, `ProfilePage`, `Person` e `FAQPage`
+- Canonical, `hreflang`, robots enriquecido e descrição orientada a busca e answer engines
+- `robots.txt`, `sitemap.xml` e `llms.txt` para crawlers e mecanismos generativos
+- Web app manifest e favicon SVG + PNG
+- Locales `en_US` e `pt_BR`
 
 ---
 
@@ -82,11 +84,15 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 
 ```text
 gustavolevandowski-site/
-├── index.html      # Página completa (markup, CSS, JS, schemas)
-├── og-card.html    # Fonte visual do card de compartilhamento
-├── og.jpg          # Imagem Open Graph / Twitter (1200×630)
-├── favicon.svg     # Ícone vetorial da marca
-├── favicon.png     # Fallback PNG 32×32
+├── index.html       # Página completa (markup, CSS, JS, schemas)
+├── og-card.html     # Fonte visual do card de compartilhamento
+├── og.jpg           # Imagem Open Graph / Twitter (1200×630)
+├── favicon.svg      # Ícone vetorial da marca
+├── favicon.png      # Fallback PNG 32×32
+├── site.webmanifest # Metadados de instalação e identidade do site
+├── robots.txt       # Política de rastreamento e descoberta do sitemap
+├── sitemap.xml      # Índice canônico para buscadores
+├── llms.txt         # Contexto factual para LLMs e mecanismos generativos
 └── README.md
 ```
 
