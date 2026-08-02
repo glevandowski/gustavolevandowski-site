@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="MDM architecture diagram" class="diagram" fill="none" id="diagMDM" role="img" viewBox="0 0 440 400">
+<!-- console -->
+<rect class="draw" height="52" rx="10" stroke="#161513" stroke-width="1.3" style="--len:600" width="240" x="100" y="20"></rect>
+<text class="lang-en-el t-strong" text-anchor="middle" x="220" y="42">ADMIN CONSOLE</text><text class="lang-pt-el t-strong" text-anchor="middle" x="220" y="42">CONSOLE ADMIN</text>
+<text class="lang-en-el" text-anchor="middle" x="220" y="58">1M+ devices · single pane</text><text class="lang-pt-el" text-anchor="middle" x="220" y="58">1M+ dispositivos · 1 console</text>
+<!-- link -->
+<line class="draw" stroke="#B08C4A" stroke-width="1.3" style="--len:40" x1="220" x2="220" y1="72" y2="112"></line>
+<!-- policy engine -->
+<rect class="draw" height="56" rx="10" stroke="#B08C4A" stroke-width="1.4" style="--len:650" width="260" x="90" y="112"></rect>
+<rect class="node-fill" fill="#B08C4A" fill-opacity=".07" height="56" rx="10" width="260" x="90" y="112"></rect>
+<text class="lang-en-el t-gold" text-anchor="middle" x="220" y="136">POLICY ENGINE</text><text class="lang-pt-el t-gold" text-anchor="middle" x="220" y="136">MOTOR DE POLÍTICAS</text>
+<text class="lang-en-el" text-anchor="middle" x="220" y="152">encryption · 2FA · restrictions</text><text class="lang-pt-el" text-anchor="middle" x="220" y="152">criptografia · 2FA · restrições</text>
+<!-- link -->
+<line class="draw" stroke="#B08C4A" stroke-width="1.3" style="--len:40" x1="220" x2="220" y1="168" y2="208"></line>
+<!-- agent -->
+<rect class="draw" height="52" rx="10" stroke="#161513" stroke-width="1.3" style="--len:520" width="200" x="120" y="208"></rect>
+<text class="lang-en-el t-strong" text-anchor="middle" x="220" y="230">MDM AGENT</text><text class="lang-pt-el t-strong" text-anchor="middle" x="220" y="230">AGENTE MDM</text>
+<text class="lang-en-el" text-anchor="middle" x="220" y="246">Kotlin · AOSP-level</text><text class="lang-pt-el" text-anchor="middle" x="220" y="246">Kotlin · nível AOSP</text>
+<!-- fan out -->
+<path class="draw" d="M220 260 L220 286 M220 286 L80 286 L80 316 M220 286 L220 316 M220 286 L360 286 L360 316" stroke="#A3A099" stroke-width="1.2" style="--len:600"></path>
+<!-- devices -->
+<g stroke="#161513" stroke-width="1.2">
+<rect class="draw" height="64" rx="9" style="--len:250" width="56" x="52" y="316"></rect>
+<rect class="draw" height="64" rx="9" style="--len:250" width="56" x="192" y="316"></rect>
+<rect class="draw" height="64" rx="9" style="--len:250" width="56" x="332" y="316"></rect>
+</g>
+<g class="node-fill">
+<line stroke="#B08C4A" stroke-width="1.4" x1="70" x2="90" y1="368" y2="368"></line>
+<line stroke="#B08C4A" stroke-width="1.4" x1="210" x2="230" y1="368" y2="368"></line>
+<line stroke="#B08C4A" stroke-width="1.4" x1="350" x2="370" y1="368" y2="368"></line>
+</g>
+<text class="lang-en-el node-fill" text-anchor="middle" x="220" y="398">1,000,000+ MANAGED DEVICES</text><text class="lang-pt-el node-fill" text-anchor="middle" x="220" y="398">1.000.000+ DISPOSITIVOS GERENCIADOS</text>
+</svg>

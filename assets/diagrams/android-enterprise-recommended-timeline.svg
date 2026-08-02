@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Android Enterprise Recommended timeline" class="diagram" fill="none" role="img" viewBox="0 0 440 340">
+<rect class="draw" height="54" rx="10" stroke="#161513" stroke-width="1.3" style="--len:650" width="260" x="90" y="20"></rect>
+<text class="lang-en-el t-strong" text-anchor="middle" x="220" y="43">GOOGLE REQUIREMENTS</text><text class="lang-pt-el t-strong" text-anchor="middle" x="220" y="43">REQUISITOS DO GOOGLE</text>
+<text class="lang-en-el" text-anchor="middle" x="220" y="60">~58 features · record time</text><text class="lang-pt-el" text-anchor="middle" x="220" y="60">~58 features · tempo recorde</text>
+<line class="draw" stroke="#B08C4A" stroke-width="1.3" style="--len:40" x1="220" x2="220" y1="74" y2="112"></line>
+<rect class="draw" height="54" rx="10" stroke="#B08C4A" stroke-width="1.4" style="--len:650" width="260" x="90" y="112"></rect>
+<rect class="node-fill" fill="#B08C4A" fill-opacity=".07" height="54" rx="10" width="260" x="90" y="112"></rect>
+<text class="lang-en-el t-gold" text-anchor="middle" x="220" y="135">DIRECT WITH GOOGLE ENG.</text><text class="lang-pt-el t-gold" text-anchor="middle" x="220" y="135">DIRETO COM A ENG. DO GOOGLE</text>
+<text class="lang-en-el" text-anchor="middle" x="220" y="152">validation · annual renewal</text><text class="lang-pt-el" text-anchor="middle" x="220" y="152">validação · renovação anual</text>
+<line class="draw" stroke="#B08C4A" stroke-width="1.3" style="--len:40" x1="220" x2="220" y1="166" y2="204"></line>
+<rect class="draw" height="66" rx="12" stroke="#161513" stroke-width="1.4" style="--len:800" width="320" x="60" y="204"></rect>
+<rect class="node-fill" fill="#161513" fill-opacity=".04" height="66" rx="12" width="320" x="60" y="204"></rect>
+<text class="lang-en-el t-strong" text-anchor="middle" x="220" y="231">AER · GLOBAL BADGE</text><text class="lang-pt-el t-strong" text-anchor="middle" x="220" y="231">AER · SELO GLOBAL</text>
+<text class="lang-en-el" text-anchor="middle" x="220" y="249">1 of 11 companies worldwide</text><text class="lang-pt-el" text-anchor="middle" x="220" y="249">1 de 11 empresas no mundo</text>
+<g class="node-fill">
+<line stroke="#B08C4A" stroke-width="1.2" x1="100" x2="152" y1="300" y2="300"></line>
+<line stroke="#B08C4A" stroke-width="1.2" x1="288" x2="340" y1="300" y2="300"></line>
+<text class="lang-en-el t-gold" text-anchor="middle" x="220" y="304">GOOGLE MENTION</text><text class="lang-pt-el t-gold" text-anchor="middle" x="220" y="304">MENÇÃO DO GOOGLE</text>
+</g>
+<text class="lang-en-el node-fill" text-anchor="middle" x="220" y="326">FASTEST IMPLEMENTATION IN LATIN AMERICA</text><text class="lang-pt-el node-fill" text-anchor="middle" x="220" y="326">IMPLEMENTAÇÃO MAIS RÁPIDA DA AMÉRICA LATINA</text>
+</svg>

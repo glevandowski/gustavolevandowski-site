@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Secure browser layers" class="diagram" fill="none" role="img" viewBox="0 0 440 300">
+<rect class="draw" height="240" rx="14" stroke="#161513" stroke-width="1.3" style="--len:1200" width="320" x="60" y="30"></rect>
+<line class="draw" stroke="#E8E6E2" stroke-width="1.2" style="--len:320" x1="60" x2="380" y1="76" y2="76"></line>
+<circle class="node-fill" cx="86" cy="53" fill="none" r="4" stroke="#B08C4A" stroke-width="1.2"></circle>
+<rect class="node-fill" fill="#F6F5F3" height="16" rx="8" stroke="#E8E6E2" width="200" x="104" y="45"></rect>
+<text class="lang-en-el node-fill t-gold" x="118" y="57">https:// approved only</text><text class="lang-pt-el node-fill t-gold" x="118" y="57">https:// só aprovados</text>
+<rect class="draw" height="34" rx="8" stroke="#B08C4A" stroke-width="1.3" style="--len:600" width="264" x="88" y="104"></rect>
+<text class="lang-en-el t-gold" text-anchor="middle" x="220" y="125">DOMAIN ALLOWLIST</text><text class="lang-pt-el t-gold" text-anchor="middle" x="220" y="125">DOMÍNIOS PERMITIDOS</text>
+<rect class="draw" height="34" rx="8" stroke="#A3A099" stroke-width="1.2" style="--len:600" width="264" x="88" y="152"></rect>
+<text class="lang-en-el" text-anchor="middle" x="220" y="173">KIOSK / SESSION RULES</text><text class="lang-pt-el" text-anchor="middle" x="220" y="173">QUIOSQUE / REGRAS DE SESSÃO</text>
+<rect class="draw" height="34" rx="8" stroke="#A3A099" stroke-width="1.2" style="--len:600" width="264" x="88" y="200"></rect>
+<text class="lang-en-el" text-anchor="middle" x="220" y="221">MDM POLICY SYNC</text><text class="lang-pt-el" text-anchor="middle" x="220" y="221">SINCRONIA DE POLÍTICAS MDM</text>
+<text class="lang-en-el node-fill" text-anchor="middle" x="220" y="290">EVERY CAPABILITY = A POLICY</text><text class="lang-pt-el node-fill" text-anchor="middle" x="220" y="290">CADA RECURSO = UMA POLÍTICA</text>
+</svg>

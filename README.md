@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./og.jpg" alt="Gustavo Levandowski · Android Engineer · systems on platforms that secure 1M+ devices · mentoring" width="100%">
+  <img src="./assets/brand/og.jpg" alt="Gustavo Levandowski · Android Engineer · systems on platforms that secure 1M+ devices · mentoring" width="100%">
 </p>
 
 <p align="center">
-  <img src="./favicon.svg" alt="Marca" width="40" height="40">
+  <img src="./assets/brand/favicon.svg" alt="Marca" width="40" height="40">
 </p>
 
 <h1 align="center">gustavolevandowski.com</h1>
@@ -71,9 +71,10 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 
 ### SEO e descoberta
 
-- Meta tags Open Graph e Twitter Card (`og.jpg` 1200×630)
+- Meta tags Open Graph e Twitter Card (`assets/brand/og.jpg` 1200×630)
 - JSON-LD: `WebSite`, `ProfilePage`, `Person` e `FAQPage`
 - Rotas canônicas `/en/` e `/pt/` com `hreflang` (root redireciona para `/en/`)
+- HTML enxuto (~50 KB por idioma); CSS, JS, fotos e diagramas em `/assets` com cache HTTP
 - `robots.txt` com Allow explícito para bots de IA (GPTBot, ChatGPT-User, ClaudeBot, …)
 - `sitemap.xml`, `llms.txt`, IndexNow e checklist em `DISCOVERY.md`
 - Web app manifest e favicon SVG + PNG
@@ -85,24 +86,27 @@ O design segue uma identidade editorial minimalista — fundo papel (`#F6F5F3`),
 
 ```text
 gustavolevandowski-site/
-├── index.html       # Fonte bilíngue (editar aqui)
-├── en/index.html    # Build EN (scripts/build_i18n.py)
-├── pt/index.html    # Build PT-BR
-├── _redirects       # / → /en/ e /.well-known/llms.txt
-├── og-card.html     # Fonte visual do card de compartilhamento
-├── og.jpg           # Imagem Open Graph / Twitter (1200×630)
-├── favicon.svg      # Ícone vetorial da marca
-├── favicon.png      # Fallback PNG 32×32
-├── site.webmanifest # Metadados de instalação e identidade do site
-├── robots.txt       # Crawlers + bots de IA
-├── sitemap.xml      # Índice EN/PT com hreflang
-├── llms.txt         # Contexto factual para LLMs
-├── DISCOVERY.md     # Bing/GSC/IndexNow/backlinks
-├── scripts/         # build_i18n.py, submit_indexnow.py
+├── index.html              # Fonte bilíngue (editar aqui)
+├── en/index.html           # Build EN — página indexável
+├── pt/index.html           # Build PT-BR — página indexável
+├── assets/
+│   ├── css/main.css        # Design system + layout
+│   ├── js/main.js          # Interações (HUD, reveals, diagramas, i18n routes)
+│   ├── img/                # Fotos (ex-base64)
+│   ├── diagrams/           # SVGs dos cases
+│   └── brand/              # favicon, og.jpg, og-card.html
+├── _redirects              # / → /en/, legacy brand paths, llms
+├── _headers                # Cache de HTML vs assets
+├── site.webmanifest
+├── robots.txt
+├── sitemap.xml
+├── llms.txt
+├── DISCOVERY.md
+├── scripts/                # build_i18n.py, submit_indexnow.py
 └── README.md
 ```
 
-A experiência continua estática e sem dependências de runtime. Depois de editar `index.html`, rode `scripts/build_i18n.py` e faça commit de `en/`, `pt/` e `sitemap.xml`.
+Depois de editar `index.html`, rode `scripts/build_i18n.py` e faça commit de `en/`, `pt/` e `sitemap.xml`. Assets em `/assets` são cacheados via `_headers`.
 
 ---
 
@@ -129,16 +133,18 @@ Abra [http://localhost:8080](http://localhost:8080).
 
 ## Regenerar o card Open Graph
 
-O `og.jpg` é exportado a partir de `og-card.html` (canvas fixo 1200×630).
+O `assets/brand/og.jpg` é exportado a partir de `assets/brand/og-card.html` (canvas fixo 1200×630).
 
-1. Abra `og-card.html` no navegador (idealmente em 1200×630 ou com zoom 100%).
+1. Abra `assets/brand/og-card.html` no navegador (idealmente em 1200×630 ou com zoom 100%).
 2. Capture a viewport (DevTools → device metrics, ou ferramenta de screenshot full-page limitada ao body).
-3. Exporte como JPEG de qualidade alta e substitua `og.jpg` na raiz.
-4. No deploy, o arquivo precisa ficar na **raiz do domínio**, junto com o `index.html`, porque as meta tags apontam para:
+3. Exporte como JPEG de qualidade alta e substitua `assets/brand/og.jpg`.
+4. As meta tags apontam para:
 
 ```text
-https://gustavolevandowski.com/og.jpg
+https://gustavolevandowski.com/assets/brand/og.jpg
 ```
+
+Paths legados `/og.jpg`, `/favicon.svg` e `/favicon.png` redirecionam para `assets/brand/`.
 
 ---
 
@@ -207,6 +213,6 @@ Publique a raiz do repositório. Em produção, o comentário no `index.html` re
 ---
 
 <p align="center">
-  <img src="./favicon.svg" alt="" width="28" height="28"><br>
+  <img src="./assets/brand/favicon.svg" alt="" width="28" height="28"><br>
   <sub>EST 2013 · ANDROID 2017 · SC / BR · Remote, worldwide</sub>
 </p>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Remote control data flow" class="diagram" fill="none" role="img" viewBox="0 0 440 300">
+<!-- dispositivo em campo (celular) -->
+<rect class="draw" height="156" rx="14" stroke="#161513" stroke-width="1.3" style="--len:560" width="104" x="34" y="72"></rect>
+<rect class="node-fill" fill="#B08C4A" fill-opacity=".08" height="112" rx="6" width="80" x="46" y="86"></rect>
+<line class="draw" stroke="#A3A099" stroke-width="1.2" style="--len:32" x1="70" x2="102" y1="212" y2="212"></line>
+<text class="lang-en-el t-strong" text-anchor="middle" x="86" y="256">FIELD DEVICE</text><text class="lang-pt-el t-strong" text-anchor="middle" x="86" y="256">DISPOSITIVO EM CAMPO</text>
+<!-- console de suporte (monitor) -->
+<rect class="draw" height="88" rx="10" stroke="#161513" stroke-width="1.3" style="--len:440" width="112" x="302" y="84"></rect>
+<rect class="node-fill" fill="#161513" fill-opacity=".05" height="60" rx="4" width="92" x="312" y="94"></rect>
+<line class="draw" stroke="#161513" stroke-width="1.3" style="--len:24" x1="358" x2="358" y1="172" y2="196"></line>
+<line class="draw" stroke="#161513" stroke-width="1.3" style="--len:56" x1="330" x2="386" y1="196" y2="196"></line>
+<text class="lang-en-el t-strong" text-anchor="middle" x="358" y="256">SUPPORT CONSOLE</text><text class="lang-pt-el t-strong" text-anchor="middle" x="358" y="256">CONSOLE DE SUPORTE</text>
+<!-- fluxo de frames (ida) -->
+<path class="draw" d="M138 128 C 190 96, 250 96, 302 122" stroke="#B08C4A" stroke-width="1.4" style="--len:200"></path>
+<text class="lang-en-el t-gold" text-anchor="middle" x="220" y="86">FRAMES · ENCRYPTED</text><text class="lang-pt-el t-gold" text-anchor="middle" x="220" y="86">FRAMES CRIPTOGRAFADOS</text>
+<!-- fluxo de input (volta) -->
+<path class="draw" d="M302 158 C 250 190, 190 190, 138 166" stroke="#A3A099" stroke-width="1.2" style="--len:200"></path>
+<text class="lang-en-el" text-anchor="middle" x="220" y="214">INPUT EVENTS</text><text class="lang-pt-el" text-anchor="middle" x="220" y="214">EVENTOS DE INPUT</text>
+<!-- selo central -->
+<text class="node-fill t-gold" text-anchor="middle" x="220" y="148">WEBRTC · P2P</text>
+</svg>
