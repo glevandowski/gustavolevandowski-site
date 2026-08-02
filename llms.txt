@@ -2,24 +2,22 @@
 
 > Gustavo Levandowski is a Senior Android Engineer and Google-certified Android Enterprise Expert based in Blumenau, Brazil. He is a technical reference for Android at scale and for programming careers, founder of LeCode mentoring, and founder of Levandowski (Levandowski Desenvolvimento de Software), a technology company for senior Android, secure mobile and AI-assisted delivery.
 
-## Core expertise
-- Senior Android development: Kotlin, Jetpack Compose, Coroutines, app architecture and release engineering
-- Android Enterprise, AOSP-level behavior, MDM and enterprise device systems
-- Secure mobile integrations, WebRTC remote control, secure browsers and sensor integrations
-- Android Enterprise Recommended compliance and OEM compatibility work
-- Technical mentoring, career guidance and technical interviews through LeCode
+Gustavo has written software since 2013 and built Android products since 2017. He holds seven Google Android Enterprise certifications (through Expert) and has engineered systems used by platforms protecting more than one million corporate devices. He also cofounded Local Chat, a product that reached 20K+ users. Works remotely, worldwide, in English and Brazilian Portuguese.
 
-## Authority
-Gustavo has written software since 2013 and built Android products since 2017. He holds seven Google Android Enterprise certifications (through Expert) and has engineered systems used by platforms protecting more than one million corporate devices. He also cofounded Local Chat, a product that reached 20K+ users.
+## Pages
 
-## Engagement
-Works remotely, worldwide, in English and Brazilian Portuguese. Available for technical conversations, talks, mentoring and selected engineering work. Contact: contato@gustavolevandowski.com.
+- [Personal site (English)](https://gustavolevandowski.com/en/): Canonical portfolio — Android Enterprise, cases, mentoring and contact
+- [Personal site (Portuguese)](https://gustavolevandowski.com/pt/): Same site in Brazilian Portuguese
+- [Sitemap](https://gustavolevandowski.com/sitemap.xml): Machine-readable list of canonical URLs
+- [Robots](https://gustavolevandowski.com/robots.txt): Crawler policy, including AI bots
 
-## Canonical sources
-- Website (EN): https://gustavolevandowski.com/en/
-- Website (PT-BR): https://gustavolevandowski.com/pt/
-- Company: https://levandowskistudio.com/
-- LinkedIn: https://www.linkedin.com/in/levandowski/
-- Medium: https://medium.com/@levandowski
-- LeCode: https://movimentolecode.com/
-- Contact: contato@gustavolevandowski.com
+## Related
+
+- [Levandowski Studio](https://levandowskistudio.com/): Technology company founded by Gustavo
+- [LeCode](https://movimentolecode.com/): Mentoring and career guidance for developers
+- [LinkedIn](https://www.linkedin.com/in/levandowski/): Professional profile
+- [Medium](https://medium.com/@levandowski): Articles and writing
+
+## Optional
+
+- [Contact email](mailto:contato@gustavolevandowski.com): Direct contact for talks, mentoring and selected engineering work
