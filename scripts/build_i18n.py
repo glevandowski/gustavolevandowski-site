@@ -28,11 +28,22 @@ PT_META = {
 }
 
 
+# Inline wrappers can disappear; block tags (p, div, …) must stay so CSS/layout keep working.
+_UNWRAP_TAGS = frozenset({"span"})
+
+
 def unwrap_lang(soup: BeautifulSoup, keep: str, drop: str) -> None:
     for el in list(soup.select(f".{drop}")):
         el.decompose()
     for el in list(soup.select(f".{keep}")):
-        el.unwrap()
+        classes = [c for c in (el.get("class") or []) if c != keep]
+        if classes:
+            el["class"] = classes
+        else:
+            el.attrs.pop("class", None)
+        # <p class="lang-en-el">…</p> must remain a <p> (footer legal, etc.).
+        if el.name in _UNWRAP_TAGS and not el.get("class"):
+            el.unwrap()
 
 
 def set_lang_toggle(soup: BeautifulSoup, lang: str) -> None:
