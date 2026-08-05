@@ -62,7 +62,11 @@
       hud.classList.toggle('visible', y > window.innerHeight * .5 && max - y > 140);
 
       if (!reduced){
-        if (rose) rose.style.transform = `rotate(${p * 140}deg)`;
+        if (rose){
+          // Early scroll should move the rose clearly while the hero is still on screen
+          const heroBoost = Math.min(1, y / Math.max(1, window.innerHeight * 0.85));
+          rose.style.transform = `rotate(${(heroBoost * 70 + p * 100).toFixed(2)}deg)`;
+        }
         if (needle) needle.style.transform = `rotate(${p * 360}deg)`;
         if (fieldImg){
           const r = fieldImg.parentElement.getBoundingClientRect();
