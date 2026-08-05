@@ -1,26 +1,43 @@
 /*
   Caching strategy:
-  - HTML: always revalidate (content + SEO)
-  - CSS/JS: one week + SWR (update via deploy)
-  - Images/diagrams/brand: long-lived (immutable-ish)
+  - HTML: always revalidate at browser and CDN
+  - CSS/JS: long-lived; bump ?v= on deploy
+  - Images/diagrams/brand: long-lived
 */
 
 /
   Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
 
 /en/*
   Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
 
 /pt/*
   Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
+
+/en/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
+
+/pt/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
 
 /llms.txt
   Content-Type: text/markdown; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
 
 /.well-known/llms.txt
   Content-Type: text/markdown; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
 
 /assets/css/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
