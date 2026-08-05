@@ -529,61 +529,57 @@ footer{
   .nm-name{font-size:14px}
   .nm-role{display:none}
   .nav-links{gap:18px}
-  .hero{
-    padding-top:80px;padding-bottom:min(48vw,210px);justify-content:flex-start;overflow:hidden;
-    background:linear-gradient(180deg,#fff 0%,#F7F5F1 100%);
-  }
-  /* Rosa como horizonte: metade superior do dial visível, centrada, girando no scroll */
+  .hero{padding-top:80px;padding-bottom:150px;justify-content:flex-start;overflow:hidden}
+  /* rosa dos ventos como horizonte: arco superior surge centralizado no fecho do hero,
+     em faixa própria, sem texto ou botões por cima; gira com o scroll */
   .hero-rose{
-    display:block;top:auto;right:auto;left:50%;
-    bottom:calc(-0.48 * min(112vw,460px));
+    display:block;top:auto;right:auto;left:50%;bottom:calc(-1*min(105vw,400px) + 96px);
     transform:translateX(-50%);
-    width:min(112vw,460px);height:min(112vw,460px);
-    opacity:1;z-index:1;
+    width:min(105vw,400px);height:min(105vw,400px);opacity:1;
   }
   .hero::before{
-    content:'';position:absolute;left:50%;bottom:-18vw;transform:translateX(-50%);
-    width:90vw;height:42vw;border-radius:50%;pointer-events:none;z-index:0;
-    background:radial-gradient(ellipse,rgba(176,140,74,.08) 0%,rgba(176,140,74,0) 70%);
+    content:'';position:absolute;left:50%;bottom:-30vw;transform:translateX(-50%);
+    width:120vw;height:70vw;border-radius:50%;pointer-events:none;
+    background:radial-gradient(ellipse,rgba(176,140,74,.13) 0%,rgba(176,140,74,0) 65%);
   }
-  /* traços e agulha com contraste suficiente sobre o cream */
-  .hero-rose #roseSpin > circle{stroke:#B7B1A6;stroke-width:1.15}
-  .hero-rose #roseTicks{stroke:#9F998E;stroke-width:1.15}
-  .hero-rose #roseSpin path:nth-of-type(1){fill-opacity:.4}
-  .hero-rose #roseSpin path:nth-of-type(2){fill-opacity:.12}
-  .hero-rose #roseSpin path:nth-of-type(3){stroke-opacity:.88;stroke-width:1.35}
-  .hero-rose text{fill:#7A756B;font-size:15px}
-  /* indicador de scroll apontando para o N */
+  /* traços com mais presença no tamanho pequeno */
+  .hero-rose #roseSpin > circle{stroke:#CFCAC2}
+  .hero-rose #roseTicks{stroke:#BFB9AE}
+  .hero-rose #roseSpin path:nth-of-type(1){fill-opacity:.3}
+  .hero-rose #roseSpin path:nth-of-type(2){fill-opacity:.1}
+  .hero-rose #roseSpin path:nth-of-type(3){stroke-opacity:.75}
+  /* indicador de scroll centralizado, apontando para o N da bússola */
   .hero-scrollcue{
     display:flex;flex-direction:column-reverse;align-items:center;gap:9px;
-    left:50%;right:auto;transform:translateX(-50%);
-    bottom:calc(0.48 * min(112vw,460px) - 8px);
-    font-size:9.5px;letter-spacing:.14em;white-space:nowrap;z-index:3;
+    left:50%;right:auto;transform:translateX(-50%);bottom:104px;
+    font-size:9.5px;letter-spacing:.14em;white-space:nowrap;
   }
-  .hero-scrollcue .line{height:28px}
+  .hero-scrollcue .line{height:26px}
+  .hero-rose text{fill:#8D897F}
   .hero h1{font-size:clamp(32px,9vw,40px);line-height:1.13;margin:18px 0 14px}
   .hero h1 em{white-space:normal}
   .eyebrow{font-size:10.5px;letter-spacing:.14em;gap:10px}
   .eyebrow::before{width:20px;flex:none}
   .eb-x{display:none}
+  /* versão curta do parágrafo: primeira dobra objetiva */
   .sub-full{display:none}
   .sub-short{display:inline}
-  .hero-inner{display:flex;flex-direction:column;position:relative;z-index:2}
-  /* meta no topo, como na composição de referência */
+  /* credenciais viram o fecho da seção, abaixo dos CTAs, em linha única */
+  .hero-inner{display:flex;flex-direction:column}
   .hero-meta{
-    order:0;margin:0 0 22px;padding:0 0 14px;
-    border-bottom:1px solid var(--hairline);border-top:0;
-    font-size:10px;letter-spacing:.08em;gap:6px 12px;
-    justify-content:space-between;max-width:none;width:100%;
+    order:10;margin:26px 0 0;padding:14px 0 0;
+    border-bottom:0;border-top:1px solid var(--hairline);
+    font-size:10px;letter-spacing:.08em;gap:5px 10px;
+    justify-content:space-between;max-width:none;
   }
   .hero-meta span:first-child{display:none}
   .hero-ctas{margin-top:26px;gap:10px;flex-direction:column;align-items:stretch}
   .hero-ctas .btn{justify-content:center;text-align:center;padding:14px 20px}
   .metrics-grid{grid-template-columns:1fr 1fr}
-  .metric{padding:28px 8px}
+  .metric{padding:26px 16px}
   .metric:nth-child(n+3){border-top:1px solid var(--hairline)}
   .metric .num{font-size:28px}
-  .metric .lbl{font-size:10px;margin-top:10px;letter-spacing:.1em}
+  .metric .lbl{font-size:10px;margin-top:10px}
   .work{padding-top:72px}
   .section-head{margin-bottom:44px}
   .section-head h2{font-size:27px;line-height:1.22}
@@ -631,7 +627,7 @@ footer{
 
 /* --------- very narrow (<=400px) --------- */
 @media(max-width:400px){
-  section,.hero{padding-left:24px;padding-right:24px}
+  section,.hero{padding-left:20px;padding-right:20px}
   .case-visual{margin:0 -20px}
   .hero h1{font-size:30px}
   .hero-meta{gap:5px 12px}
